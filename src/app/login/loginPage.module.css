@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.wrapper {
+  background-color: var(--bg-var1);
+  border-radius: 10px;
+  width: 550px;
+  padding: 40px;
+}

@@ -1,0 +1,33 @@
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.input {
+  padding: 20px;
+  width: 100%;
+}
+
+.button {
+  padding: 16px 20px;
+  background-color: teal;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.inputError {
+  font-size: 0.875rem;
+  color: red;
+}

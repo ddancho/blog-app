@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+.logo {
+  flex: 1;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.links {
+  display: flex;
+  flex: 1;
+  gap: 20px;
+  font-size: 1.15rem;
+  align-items: center;
+}
+
+@media screen and (max-width: 1280px) {
+  .logo {
+    font-size: 1.75rem;
+  }
+
+  .links {
+    font-size: 1.05rem;
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .logo {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .links {
+    justify-content: flex-end;
+  }
+
+  .link {
+    display: none;
+  }
+}

@@ -1,0 +1,12 @@
+.container {
+  margin-top: 50px;
+}
+
+.title {
+  color: var(--txt-color-var1);
+  margin-bottom: 30px;
+}
+
+.comments {
+  margin-top: 50px;
+}

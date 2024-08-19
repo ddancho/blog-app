@@ -1,0 +1,75 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String  @id @default(cuid())
+  email    String  @unique @db.VarChar(100)
+  name     String  @db.VarChar(100)
+  password String  @db.VarChar(100)
+  image    String? @db.VarChar(100)
+
+  updatedAt DateTime @updatedAt @map("updated_at")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  posts    Post[]
+  comments Comment[]
+
+  @@map("Users")
+}
+
+model Post {
+  id          String   @id @default(cuid())
+  slug        String   @unique @db.VarChar(100)
+  title       String   @db.VarChar(100)
+  description String
+  views       Int      @default(0)
+  image       String?  @db.VarChar(100)
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  user      User   @relation(fields: [userEmail], references: [email])
+  userEmail String
+
+  category     Category @relation(fields: [categorySlug], references: [slug])
+  categorySlug String
+
+  comments Comment[]
+
+  @@map("Posts")
+}
+
+model Comment {
+  id          String   @id @default(cuid())
+  description String
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  user      User   @relation(fields: [userEmail], references: [email])
+  userEmail String
+
+  post     Post   @relation(fields: [postSlug], references: [slug])
+  postSlug String
+
+  @@map("Comments")
+}
+
+model Category {
+  id        String       @id @default(cuid())
+  slug      String       @unique @db.VarChar(100)
+  title     String       @db.VarChar(100)
+  type      CategoryType
+  createdAt DateTime     @default(now()) @map("created_at")
+
+  posts Post[]
+
+  @@map("Categories")
+}
+
+enum CategoryType {
+  Framework
+  Language
+}

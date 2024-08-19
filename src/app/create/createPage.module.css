@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  padding: 30px;
+  font-size: 3rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--txt-color);
+}
+
+.input::placeholder {
+  color: #b3b3b1;
+}
+
+.middle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.selects {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: max-content;
+
+  gap: 20px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.category {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--txt-color);
+}
+
+.select {
+  padding: 10px 20px;
+  width: max-content;
+}
+
+.editor {
+  display: flex;
+  gap: 20px;
+  height: 700px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--txt-color);
+  border-radius: 50%;
+  border-color: #1a8917;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.fileBrowser {
+  display: none;
+}
+
+.textArea {
+  width: 100%;
+}
+
+.publish {
+  padding: 10px 20px;
+  border: none;
+  background-color: #1a8917;
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+}

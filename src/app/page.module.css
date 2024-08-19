@@ -1,0 +1,10 @@
+.content {
+  display: flex;
+  gap: 50px;
+}
+
+.title {
+  font-size: 6rem;
+  font-weight: 300;
+  text-align: center;
+}
